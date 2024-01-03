@@ -1,11 +1,12 @@
 const express = require("express");
 const process = require("process");
 const mongoose = require("mongoose");
+const config = require("./config");
 const routes = require("./routes");
 const errorHandler = require("./middlewares/errorHandler");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = config.port || 3000;
 
 // Middleware for parsing request bodies
 app.use(express.json());
